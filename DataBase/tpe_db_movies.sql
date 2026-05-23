@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-05-2026 a las 06:28:13
+-- Tiempo de generación: 23-05-2026 a las 19:11:11
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -51,7 +51,7 @@ INSERT INTO `genre` (`id_genre`, `main_genre`) VALUES
 CREATE TABLE `movie` (
   `id_movie` int(10) NOT NULL,
   `title` varchar(20) NOT NULL,
-  `poster_path` varchar(20) NOT NULL,
+  `poster_path` varchar(60) NOT NULL,
   `release_date` date NOT NULL,
   `overview` text NOT NULL,
   `id_genre` int(11) NOT NULL
@@ -62,10 +62,9 @@ CREATE TABLE `movie` (
 --
 
 INSERT INTO `movie` (`id_movie`, `title`, `poster_path`, `release_date`, `overview`, `id_genre`) VALUES
-(10, 'Fast & Furious', 'img', '2009-04-02', '', 1),
-(12, 'The Mummy', 'img', '2026-04-03', '', 2),
-(14, 'The SpongeBob Movie', 'images/movies/6a115c', '2025-12-16', '', 3),
-(16, 'Scary Movie', 'img', '2000-07-07', '', 4);
+(12, 'The Mummy', 'images/movies/The mummy.jfif', '2026-04-03', 'La historia sigue a la joven hija de un periodista que desaparece misteriosamente en medio del desierto, dejando a su familia destrozada. Ocho años después, se produce un impactante reencuentro cuando la encuentran viva dentro de un sarcófago de 3000 años de antigüedad. Sin embargo, lo que debería ser una emotiva reunión familiar se transforma rápidamente en una aterradora pesadilla, ya que la niña regresa acompañada de fuerzas oscuras', 2),
+(14, 'The SpongeBob Movie', 'images/movies/The spongebob.jpg', '2025-12-16', 'The SpongeBob Movie: Search for SquarePants sigue a Bob Esponja en un épico viaje a las profundidades del océano para enfrentarse al Holandés Errante. En su intento por demostrar que es un \"tipo grande\" y valiente, se une accidentalmente a la tripulación del pirata fantasma, lo que lleva a sus amigos a una alocada misión de rescate en el inframundo', 3),
+(16, 'Scary Movie', 'images/movies/Scary Movie.jpg', '2000-07-07', 'Un año después de atropellar accidentalmente a un hombre y deshacerse de su cuerpo, seis amigos de preparatoria comienzan a ser perseguidos por un asesino enmascarado (muy similar al de Scream). Mientras intentan sobrevivir, se burlan de todos los clichés típicos de las películas de terror, mezclando misterio con un humor absurdo y escatológico', 4);
 
 -- --------------------------------------------------------
 
@@ -74,7 +73,7 @@ INSERT INTO `movie` (`id_movie`, `title`, `poster_path`, `release_date`, `overvi
 --
 
 CREATE TABLE `user` (
-  `id_usuario` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` char(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -108,7 +107,7 @@ ALTER TABLE `movie`
 -- Indices de la tabla `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id_usuario`);
+  ADD PRIMARY KEY (`id_user`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
