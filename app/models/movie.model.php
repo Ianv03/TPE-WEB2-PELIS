@@ -39,10 +39,9 @@ class MovieModel
         ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
         
         INSERT INTO `movie` (`id_movie`, `title`, `poster_path`, `release_date`, `overview`, `id_genre`) VALUES
-        (10, 'Fast & Furious', 'img', '2009-04-02', '', 1),
-        (12, 'The Mummy', 'img', '2026-04-03', '', 2),
-        (14, 'The SpongeBob Movie', 'img', '2025-12-16', '', 3),
-        (16, 'Scary Movie', 'img', '2000-07-07', '', 4);
+        (12, 'The Mummy', 'images/movies/The mummy.jfif', '2026-04-03', 'La historia sigue a la joven hija de un periodista que desaparece misteriosamente en medio del desierto, dejando a su familia destrozada. Ocho años después, se produce un impactante reencuentro cuando la encuentran viva dentro de un sarcófago de 3000 años de antigüedad. Sin embargo, lo que debería ser una emotiva reunión familiar se transforma rápidamente en una aterradora pesadilla, ya que la niña regresa acompañada de fuerzas oscuras', 2),
+        (14, 'The SpongeBob Movie', 'images/movies/The spongebob.jpg', '2025-12-16', 'The SpongeBob Movie: Search for SquarePants sigue a Bob Esponja en un épico viaje a las profundidades del océano para enfrentarse al Holandés Errante. En su intento por demostrar que es un \"tipo grande\" y valiente, se une accidentalmente a la tripulación del pirata fantasma, lo que lleva a sus amigos a una alocada misión de rescate en el inframundo', 3),
+        (16, 'Scary Movie', 'images/movies/Scary Movie.jpg', '2000-07-07', 'Un año después de atropellar accidentalmente a un hombre y deshacerse de su cuerpo, seis amigos de preparatoria comienzan a ser perseguidos por un asesino enmascarado (muy similar al de Scream). Mientras intentan sobrevivir, se burlan de todos los clichés típicos de las películas de terror, mezclando misterio con un humor absurdo y escatológico', 4);
 
         CREATE TABLE `user` (
         `id_user` int(11) NOT NULL,
@@ -122,7 +121,7 @@ class MovieModel
   {
     $poster_path = $this->uploadImage($imgToLoad);
 
-    $query = $this->db->prepare('INSERT INTO movie (id_movie, title, poster_path, release_date, overview, id_genre) VALUES (?,?,?,?,?,?,?)');
+    $query = $this->db->prepare('INSERT INTO movie (id_movie, title, poster_path, release_date, overview, id_genre) VALUES (?,?,?,?,?,?)');
     $query->execute([$id_movie, $title, $poster_path, $release_date, $overview, $id_genre]);
 
     $id = $this->db->lastInsertId();
