@@ -1,0 +1,23 @@
+<main class="container-fluid d-flex justify-content-center" style="max-width: 30rem;">
+  <table class="table text-center">
+    <thead>
+      <tr>
+        <th scope="col">id_genre</th>
+        <th scope="col">main_genre</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php foreach ($genres as $key => $genre) : ?>
+        <tr>
+          <th scope="row"><?= htmlspecialchars($genre->id_genre) ?></th>
+          <td><?= htmlspecialchars($genre->main_genre) ?></td>
+          <td>
+            <a href="showGenreEdit/<?= htmlspecialchars(urlencode($genre->main_genre)) ?>" class="btn btn-success mb-3">edit</a>
+            <a href="deleteGenre/<?= htmlspecialchars(urlencode($genre->main_genre)) ?>" class="btn btn-danger mb-3">delete</a>
+          </td>
+        </tr>
+      <?php endforeach ?>
+    </tbody>
+  </table>
+</main>

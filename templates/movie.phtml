@@ -1,0 +1,19 @@
+<main class="container-fluid d-flex justify-content-center flex-wrap">
+  <div class="card mt-3 border-secondary" style="max-width: 740px;">
+    <div class="row g-0">
+      <div class="col-md-6">
+        <img src="<?= htmlspecialchars($movie->poster_path) ?>" class="img-fluid rounded-start" alt="img movie">
+      </div>
+      <div class="col-md-6">
+        <div class="card-body">
+          <h5 class="card-title"><?= htmlspecialchars($movie->title) ?></h5>
+          <p class="card-text"><?= htmlspecialchars($movie->overview) ?></p>
+          <p class="card-text"><small class="text-body-secondary"><?= htmlspecialchars($movie->release_date) ?></small></p>
+        </div>
+        <div class="card-body">
+          <a href="genre/<?= htmlspecialchars(urlencode($movie->main_genre)) ?>" class="card-link"><?= htmlspecialchars($movie->main_genre) ?></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

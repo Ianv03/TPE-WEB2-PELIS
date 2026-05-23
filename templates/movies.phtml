@@ -1,0 +1,14 @@
+<main class="container-fluid">
+  <div class="d-flex justify-content-center flex-wrap">
+    <?php foreach ($movies as $key => $movie) : ?>
+      <div class="card text-bg-dark m-2" style="width: 12rem;">
+        <img src="<?= htmlspecialchars($movie->poster_path) ?>" class="card-img opacity-75" alt="img movie">
+        <div class="card-img-overlay d-flex align-items-end">
+          <a href="movie/<?= htmlspecialchars(urlencode($movie->title)) ?>" style="text-decoration: none; color: white;">
+            <h5 class="card-title"><?= htmlspecialchars($movie->title) ?></h5>
+          </a>
+        </div>
+      </div>
+    <?php endforeach ?>
+  </div>
+</main>

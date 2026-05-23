@@ -1,0 +1,12 @@
+<main class="container-fluid mt-3" style="max-width: 30rem;">
+  <form action="editGenre" method="post" class="text-center">
+    <div class="mb-3">
+      <input type="number" name="id_genre" class="form-control" readonly value="<?= htmlspecialchars($genre->id_genre) ?>">
+    </div>
+    <div class="mb-3">
+      <input type="text" name="main_genre" class="form-control" required value="<?= htmlspecialchars($genre->main_genre) ?>">
+    </div>
+    <button type="submit" class="btn btn-primary">Confirm</button>
+    <a href="showGenreList" class="btn btn-secondary">Cancel</a>
+  </form>
+</main>
