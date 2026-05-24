@@ -16,4 +16,5 @@
         Generos: Para clasificar las diferentes peliculas
 
 ## Diagrama de entidad relacion (DER)
-![DER](./DER.png)
+<img width="843" height="407" alt="DER" src="https://github.com/user-attachments/assets/f20b572c-9b85-47b5-bd08-50b3e8c1d505" />
+
